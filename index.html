@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -17,6 +17,7 @@
         <script src="jasmine/lib/jasmine-2.1.2/jasmine-html.js"></script>
         <script src="jasmine/lib/jasmine-2.1.2/boot.js"></script>
     </head>
+
     <body class="menu-hidden">
         <div class="header">
             <a href="#" class="menu-icon-link">
@@ -46,12 +47,15 @@
                 <a href="#" data-id="{{id}}">{{name}}</a>
             </li>
         </script>
-
+        
+        <!-- importing jQuery-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- Importing Handler bars Library -->
         <script src="http://cdn.jsdelivr.net/handlebarsjs/2.0.0/handlebars.min.js"></script>
         <script src="http://google.com/jsapi"></script>
+        <!-- importing app script -->
         <script src="js/app.js"></script>
-
+        <!-- importing testing script -->
         <script src="jasmine/spec/feedreader.js"></script>
     </body>
 </html>
