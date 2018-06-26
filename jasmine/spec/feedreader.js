@@ -34,7 +34,7 @@ $(function() {
         it('Each feed had not empty URL', function() {
             allFeeds.forEach(feed => {
                 expect(feed.url).toBeDefined();
-                expect(feed.url.length).not.toBe(0);
+                expect(feed.url.length).not.toEqual(0);
             });
         });
 
@@ -46,7 +46,7 @@ $(function() {
         it('Each feed had not empty name', function() {
             allFeeds.forEach(feed => {
                 expect(feed.name).toBeDefined();
-                expect(feed.name.length).not.toBe(0);
+                expect(feed.name.length).not.toEqual(0);
             });
         });
     });
@@ -81,14 +81,20 @@ $(function() {
 
         
 
-    /* TODO: Write a new test suite named "Initial Entries" */
-
-        /* TODO: Write a test that ensures when the loadFeed
+    /* test suite named "Initial Entries" */
+    describe('Initial Entries', function() {
+        /* this test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+        it('', function() {
+
+        });
+    });
+
+        
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
