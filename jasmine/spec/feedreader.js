@@ -51,8 +51,7 @@ $(function() {
         });
     });
 
-
-    /* TODO: Write a new test suite named "The menu" */
+    // the menu test suite
     describe('The menu', function(){
         /* This test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
@@ -96,7 +95,7 @@ $(function() {
         });
 
         it('Feed container contains at least one entry', function() {
-            expect(feedContainer.length).toBeGreaterThan(0);
+            expect(feedContainer.children.length).toBeGreaterThan(0);
         });
     });
 
@@ -104,16 +103,26 @@ $(function() {
 
     /* Tis test suite named "New Feed Selection" */
     describe('New Feed Selection', function () {
-        /* TODO: Write a test that ensures when a new feed is loaded
+        /* This test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        /* This is not comprehensive. to understand the error put console before expect statement
+         and print the value of oldContent and newContent.you see oldContent value is always undefined.
+         because You're loading the feeds incorrectly. The loadFeed function should take a callback
+         function as parameter and there you have to set the value of the oldContent by using something
+         like oldContent= $('.feed').html() and after that you will call the second loadFeed function inside
+         that callback and set the value of newContent variable there. To be clear what I'm trying to say
+         here is an example. */
         it('new feed is loaded', function(){
             let oldContent;
-            beforeEach(function(done) {
-                loadFeed(0 ,function () {
-                    oldContent = $('.feed').html();
-                    loadFeed(1,done);
+            beforeEach((done)=> {
+                loadFeed(0, function() {
+                    // set the value of oldContenthere.
+                    loadFeed(1, function() {
+                        // set the value of newContent here.
+                       done(); // call done here
+                    });
                 });
             });
             let newContent = $('.feed').html();
