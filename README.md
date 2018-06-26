@@ -13,7 +13,9 @@ this project was practice on testing by jasmine v2.2
 ### how to load the the app locally?
 
 you can do it in defirence two ways:-
-A- Download the zip file
+
+A- Download the zip file.
+
 B- by command line you can clone the project by:
 
 ```
