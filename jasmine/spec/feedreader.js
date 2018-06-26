@@ -59,7 +59,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('The menu by default is hidden', function(){
-            expect(document.body.classList).toContain('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
 
@@ -70,11 +70,10 @@ $(function() {
           */
         it('menu changes visibility when the menu icon is clicked.', function () {
             const menu = $('.menu-icon-link');
-
             menu.click();
-            expect(document.body.classList).not.toContain('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
             menu.click();
-            expect(document.body.classList).toContain('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
         });
     });
 
@@ -88,7 +87,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        let feedContainer = $('.feed');
+        let feedContainer = $('.feed .entry-link');
 
         beforeEach(function(done) {
             loadFeed(0 ,done);
