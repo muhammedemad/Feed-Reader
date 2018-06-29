@@ -71,9 +71,9 @@ $(function() {
         it('menu changes visibility when the menu icon is clicked.', function () {
             const menu = $('.menu-icon-link');
             menu.click();
-            expect($('body').hasClass('menu-hidden')).toBe(true);
-            menu.click();
             expect($('body').hasClass('menu-hidden')).toBe(false);
+            menu.click();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
 
